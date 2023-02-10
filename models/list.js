@@ -29,7 +29,7 @@ List.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'group',
+                key: 'user_id',
               },
         },
     },
