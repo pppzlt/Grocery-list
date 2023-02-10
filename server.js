@@ -24,19 +24,7 @@ app.get('/', (req, res) => {
   res.send('Hello World')
 })
 
-app.post("/sms", (req, res) => {
-  console.log('msg received');
-  console.log(req.body)
-  const twiml = new MessagingResponse();
 
-  // Access the message body and the number it was sent from.
-  console.log(`Incoming message from ${req.body.From}: ${req.body.Body}`);
-
-  twiml.message("The MVP team reminds you of smiling!");
-
-  res.writeHead(200, { "Content-Type": "text/xml" });
-  res.end(twiml.toString());
-});
 
 sequelize.sync().then(() => {
     app.listen(PORT, () => {
