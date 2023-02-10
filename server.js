@@ -2,6 +2,7 @@ const exphbs = require("express-handlebars");
 const express = require ('express');
 const routes = require ("./controllers/");
 const sequelize = require("./config/connection");
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,6 +22,18 @@ app.use(routes);
 app.get('/', (req,res)=> {
   res.send('Hello World')
 })
+
+app.post("/sms", (req, res) => {
+  const twiml = new MessagingResponse();
+
+  // Access the message body and the number it was sent from.
+  console.log(`Incoming message from ${req.body.From}: ${req.body.Body}`);
+
+  twiml.message("The Robots are coming! Head for the hills!");
+
+  res.writeHead(200, { "Content-Type": "text/xml" });
+  res.end(twiml.toString());
+});
 
 sequelize.sync().then(() => {
     app.listen(PORT, () => {
