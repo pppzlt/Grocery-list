@@ -19,11 +19,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(routes);
 
-app.get('/', (req,res)=> {
+app.get('/', (req, res) => {
+  console.log('hello msg')
   res.send('Hello World')
 })
 
 app.post("/sms", (req, res) => {
+  console.log('msg received');
   const twiml = new MessagingResponse();
 
   // Access the message body and the number it was sent from.
