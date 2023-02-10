@@ -18,6 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(routes);
 
+app.get('/', (req,res)=> {
+  res.send('Hello World')
+})
+
 sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log('Lets go MVPS');
