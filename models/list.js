@@ -14,7 +14,7 @@ List.init(
             type: DataTypes.STRING
         },
         quantity: {
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         },
         frequency: {
             type: DataTypes.STRING

@@ -2,7 +2,7 @@ const MessagingResponse = require("twilio").twiml.MessagingResponse;
 const router = require("express").Router();
 const { User, List } = require("../models");
 
-app.post("/sms", async (req, res) => {
+router.post("/sms", async (req, res) => {
   console.log("msg received");
   console.log(req.body);
   const twiml = await new MessagingResponse();

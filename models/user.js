@@ -20,7 +20,7 @@ User.init(
             type: DataTypes.STRING
         },
         group: {
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         },
     },
     {
