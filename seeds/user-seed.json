@@ -2,26 +2,22 @@
     {
       "name": "Manny Pacquiao",
       "email": "google@google.com",
-      "password": "password123",
-      "group_id": 10
+      "password": "password123"
     },
     {
       "name": "George Costanza",
       "email": "artvandelay@gmail.com",
-      "password": "password32342",
-      "group_id": 14
+      "password": "password32342"
     },
     {
       "name": "Marry Poppins",
       "email": "idk@google.com",
-      "password": "safetyfirst1234",
-      "group_id": 15
+      "password": "safetyfirst1234"
     },
     {
       "name": "Nord Antivirus Man",
       "email": "protection@gmail.com",
-      "password": "behind9000proxy",
-      "group_id": 16
+      "password": "behind9000proxy"
     }
   ]
   

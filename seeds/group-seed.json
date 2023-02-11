@@ -1,29 +1,18 @@
 [
-    {
-      "group_id": 1,
-      "groupName": "party time",
-      "groupDescrip": "spicy food",
-      "user_id": 10
-    },
-
-    {
-        "group_id": 12,
-        "groupName": "sodium deficiency",
-        "groupDescrip": "oops all salt",
-        "user_id": 14
-      },
-
-      {
-        "group_id": 13,
-        "groupName": "diet food",
-        "groupDescrip": "my cabbages",
-        "user_id": 15
-      },
-
-      {
-        "group_id": 14,
-        "groupName": "vegan stuff",
-        "groupDescrip": "lets eat grass",
-        "user_id": 16
-      }
+  {
+    "groupName": "party time",
+    "groupDescrip": "spicy food"
+  },
+  {
+    "groupName": "sodium deficiency",
+    "groupDescrip": "oops all salt"
+  },
+  {
+    "groupName": "diet food",
+    "groupDescrip": "my cabbages"
+  },
+  {
+    "groupName": "vegan stuff",
+    "groupDescrip": "lets eat grass"
+  }
 ]
