@@ -1,31 +1,29 @@
 const { Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
 
-class User extends Model {}
+class Group extends Model {}
 
-User.init(
+Group.init(
     {
-        user_id: {
+        group_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        groupName: {
             type: DataTypes.STRING
         },
-        email: {
+        groupDescrip: {
             type: DataTypes.STRING
         },
-        password: {
-            type: DataTypes.STRING
-        },
-        group_id: {
+        // references the 'id' of 'user' to find which one is within a group
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'group',
-                key: 'group_id',
-            }
-        },
+              model: 'user',
+              key: 'user_id',
+            },
+          },
     },
     {
         sequelize,
@@ -34,8 +32,8 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
+        modelName: 'group'
     }
 );
 
-module.exports = User;
+module.exports = Group;

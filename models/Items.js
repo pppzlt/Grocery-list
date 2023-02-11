@@ -1,11 +1,11 @@
 const { Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
 
-class List extends Model {}
+class Items extends Model {}
 
-List.init(
+Items.init(
     {
-        list_id: {
+        items_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -28,8 +28,8 @@ List.init(
         group_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
-                key: 'user_id',
+                model: 'group',
+                key: 'group_id',
               },
         },
     },
@@ -38,8 +38,8 @@ List.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'list'
+        modelName: 'items'
     }
 );
 
-module.exports = List;
+module.exports = Items;
