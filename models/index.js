@@ -1,3 +1,10 @@
-const Todo = require('./todo');
+const User = require('./User');
+const List = require('./List');
 
-module.exports = { Todo };
+List.hasOne(User, {
+    foreignKey: 'group_id',
+    onDelete: 'CASCADE',
+  });
+
+module.exports = { User, List };
+

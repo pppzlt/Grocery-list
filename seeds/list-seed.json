@@ -1,0 +1,36 @@
+[
+    {
+      "item": "apple",
+      "quantity": 1,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it",
+      "group_id": 5
+    },
+    {
+      "item": "turkey",
+      "quantity": 3,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it",
+      "group_id": 4
+    },
+    {
+      "item": "toilet paper",
+      "quantity": 400,
+      "frequency": 2,
+      "category": "supplies",
+      "comment": "buy it",
+      "group_id": 1
+
+    },
+    {
+      "item": "nacho",
+      "quantity": 20,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it thank",
+      "group_id": 3
+    }
+   
+  ]
