@@ -19,9 +19,9 @@ User.init(
         password: {
             type: DataTypes.STRING
         },
-        group: {
-            type: DataTypes.INTEGER
-            
+        group_id: {
+            type: DataTypes.INTEGER,
+            // primaryKey: true,
         },
     },
     {
