@@ -21,6 +21,7 @@ User.init(
         },
         group: {
             type: DataTypes.INTEGER
+            
         },
     },
     {
