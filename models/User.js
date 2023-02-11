@@ -21,7 +21,7 @@ User.init(
         },
         group_id: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
+            // primaryKey: true,
         },
     },
     {

@@ -1,9 +1,9 @@
 const User = require('./User');
 const List = require('./List');
 
-List.hasOne(User, {
+User.hasMany(List, {
     foreignKey: 'group_id',
-    onDelete: 'CASCADE',
+    onDelete: 'SET NULL',
   });
 
 module.exports = { User, List };
