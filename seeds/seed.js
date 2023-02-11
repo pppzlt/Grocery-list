@@ -13,15 +13,19 @@ const seedDatabase = async () => {
   for (const item of userData) {
     await User.create({...item});
   };
-
+  
+  for (const item of groupData) {
+    await Group.create({...item});
+  };
+  
   for (const item of itemsData) { 
     await Items.create({...item});
   };
 
-  for (const item of groupData) {
-    await Group.create({...item});
-  };
   process.exit(0);
 };
 
 seedDatabase();
+
+
+

@@ -17,13 +17,13 @@ Group.init(
             type: DataTypes.STRING
         },
         // references the 'id' of 'user' to find which one is within a group
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'user',
-              key: 'user_id',
-            },
-          },
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //       model: 'user',
+        //       key: 'user_id',
+        //     },
+        //   },
     },
     {
         sequelize,

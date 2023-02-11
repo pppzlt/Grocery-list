@@ -19,13 +19,13 @@ User.init(
         password: {
             type: DataTypes.STRING
         },
-        group_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'group',
-                key: 'group_id',
-            }
-        },
+        // group_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'group',
+        //         key: 'group_id',
+        //     }
+        // },
     },
     {
         sequelize,

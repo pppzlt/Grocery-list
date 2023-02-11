@@ -1,23 +1,22 @@
 [
-    {
-      "name": "Manny Pacquiao",
-      "email": "google@google.com",
-      "password": "password123"
-    },
-    {
-      "name": "George Costanza",
-      "email": "artvandelay@gmail.com",
-      "password": "password32342"
-    },
-    {
-      "name": "Marry Poppins",
-      "email": "idk@google.com",
-      "password": "safetyfirst1234"
-    },
-    {
-      "name": "Nord Antivirus Man",
-      "email": "protection@gmail.com",
-      "password": "behind9000proxy"
-    }
-  ]
-  
+  {
+    "name": "Manny Pacquiao",
+    "email": "google@google.com",
+    "password": "password123"
+  },
+  {
+    "name": "George Costanza",
+    "email": "artvandelay@gmail.com",
+    "password": "password32342"
+  },
+  {
+    "name": "Marry Poppins",
+    "email": "idk@google.com",
+    "password": "safetyfirst1234"
+  },
+  {
+    "name": "Nord Antivirus Man",
+    "email": "protection@gmail.com",
+    "password": "behind9000proxy"
+  }
+]
