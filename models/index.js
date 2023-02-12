@@ -15,9 +15,9 @@ Group.hasMany(Items, {
   onDelete: "SET NULL",
 });
 
-Items.hasOne(Group, {
-  foreignKey: "items_id",
-  onDelete: "SET NULL",
-});
+// Items.hasOne(Group, {
+//   foreignKey: "items_id",
+//   onDelete: "SET NULL",
+// });
 
 module.exports = { User, Items, Group };
