@@ -18,7 +18,7 @@ User.init(
         },
         password: {
             type: DataTypes.STRING
-        },
+        }
         // group_id: {
         //     type: DataTypes.INTEGER,
         //     references: {

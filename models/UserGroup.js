@@ -30,4 +30,4 @@ UserGroup.init(
   }
 );
 
-module.exports = ProductTag;
+module.exports = UserGroup;
