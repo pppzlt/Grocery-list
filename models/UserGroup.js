@@ -9,14 +9,14 @@ UserGroup.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: User,
+        model: "User",
         key: 'user_id'
       }
     },
     group_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: Group,
+        model: 'Group',
         key: 'group_id'
       }
     }
@@ -30,4 +30,4 @@ UserGroup.init(
   }
 );
 
-module.exports = ProductTag;
+module.exports = UserGroup;
