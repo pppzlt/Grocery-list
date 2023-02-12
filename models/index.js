@@ -16,12 +16,6 @@ Group.hasMany(Items, {
   onDelete: "SET NULL",
 });
 
-UserGroup.hasMany(User, Group, {
-  foreignKey: "group_id" ,
-  foreignKey: "user_id",
-  onDelete: "SET NULL",
-});
-
 Items.hasOne(Group, {
   foreignKey: "items_id",
   onDelete: "SET NULL",
