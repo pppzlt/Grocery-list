@@ -5,7 +5,7 @@
       "frequency": 2,
       "category": "food",
       "comment": "buy it",
-      "group_id": 5
+      "group_id": 1
     },
     {
       "item": "turkey",
@@ -13,7 +13,7 @@
       "frequency": 2,
       "category": "food",
       "comment": "buy it",
-      "group_id": 4
+      "group_id": 2
     },
     {
       "item": "toilet paper",
@@ -21,7 +21,7 @@
       "frequency": 2,
       "category": "supplies",
       "comment": "buy it",
-      "group_id": 1
+      "group_id": 3
 
     },
     {
@@ -30,7 +30,7 @@
       "frequency": 2,
       "category": "food",
       "comment": "buy it thank",
-      "group_id": 3
+      "group_id": 4
     }
    
   ]
