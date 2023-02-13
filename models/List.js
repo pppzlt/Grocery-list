@@ -1,22 +1,22 @@
 const { Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Group extends Model {}
+class List extends Model {}
 
-Group.init(
+List.init(
     {
-        group_id: {
+        list_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        groupName: {
+        listName: {
             type: DataTypes.STRING
         },
-        groupDescrip: {
+        listDescrip: {
             type: DataTypes.STRING
         },
-        // references the 'id' of 'user' to find which one is within a group
+        // references the 'id' of 'user' to find which one is within a list
         // user_id: {
         //     type: DataTypes.INTEGER,
         //     references: {
@@ -32,8 +32,8 @@ Group.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'group'
+        modelName: 'list'
     }
 );
 
-module.exports = Group;
+module.exports = List;
