@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Items, Group, UserGroup } = require('../models');
+const { User, Items, List, UserList } = require('../models');
 
 const itemsData = require('./items-seed.json');
 const userData = require('./user-seed.json');
-const groupData = require('./group-seed.json')
-const ugData = require('./ug-seed.json')
+const listData = require('./list-seed.json')
+const ulData = require('./ul-seed.json')
 
 const seedDatabase = async () => {
   await sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
@@ -15,12 +15,12 @@ const seedDatabase = async () => {
     await User.create({...item});
   };
   
-  for (const item of groupData) {
-    await Group.create({...item});
+  for (const item of listData) {
+    await List.create({...item});
   };
 
-  for (const item of ugData){
-    await UserGroup.create({...item});
+  for (const item of ulData){
+    await UserList.create({...item});
   }
   
   for (const item of itemsData) { 
