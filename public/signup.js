@@ -13,16 +13,26 @@ let checkPasswords = () => {
         return;
     } else {
         let firstNameLastName = firstName.value + " " + lastName.value;
-        let newUserArray = [];
-        newUserArray.push(firstNameLastName, email.value, password.value);
-        fetchCall(newUserArray)
+        let newUserObject = {
+            name: firstNameLastName,
+            email: email.value,
+            password: password.value, 
+        }
+        
+
+
+        fetchCall(newUserObject)
 };
 };
 
-let fetchCall = (newUser) => {
-    fetch('/signup/newuser', {
+let fetchCall = async (newUser) => {
+        console.log(newUser);
+        await fetch('/signup/newuser', {
         method: 'POST', 
-        body: JSON.stringify(newUser)
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
     })
 }
 

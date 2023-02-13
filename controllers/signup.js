@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, UserList } = require("../models");
+const bcrypt = require('bcrypt');
 
 router.get("/", async (req, res) => {
     try {
@@ -13,10 +14,15 @@ router.get("/", async (req, res) => {
 
 router.post("/newuser", async (req, res) => {
     try {
-
+        const newUser = req.body;
+        console.log(newUser);
+        newUser.password = await bcrypt.hash(req.body.password, 10);
+        
+        let newLog = await User.create(newUser);
+        console.log(newLog);
     } catch (err){
         res.status(500).json(err);
-    }
-})
+    };
+});
 
 module.exports = router;
