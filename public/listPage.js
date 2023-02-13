@@ -5,12 +5,12 @@ const addNew = document.getElementById("add-new");
 // CLICK EVENT LISTENER, IF Button is clicked, THEN new list is populated
 addNew.addEventListener('click', (event) => {
     event.preventDefault();
-    let card = document.getElementById("newCard");
+    let card = document.createElement("add-new");
     card.style.display = "block";
-    document.getElementById("newCardTitle").innerHTML = "Weekly List";
-    document.getElementById("newCardDesc").innerHTML = "This is your new list";
+    document.createElement("newCardTitle").innerHTML = "Weekly List";
+    document.createElement("newCardDesc").innerHTML = "This is your new list";
+    //Template Literal from lines 42-56 on listPage.handlebars
 })
-
 
 // EVENT LISTENERS FOR NAV MENU
 
