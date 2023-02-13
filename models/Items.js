@@ -25,11 +25,11 @@ Items.init(
         comment: {
             type: DataTypes.STRING
         },
-        group_id: {
+        list_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'group',
-                key: 'group_id',
+                model: 'list',
+                key: 'list_id',
               },
         },
     },

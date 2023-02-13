@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { User, List } = require("../models");
+const { User, UserList } = require("../models");
 
 router.get("/", async (req, res) => {
     try {
         res.render('signup');
-        res.status(200).json({message: 'Hello there signup!'});
+        // res.status(200).json({message: 'Hello there signup!'});
 
     } catch (err){
         res.status(500).json(err);

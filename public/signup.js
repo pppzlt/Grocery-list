@@ -9,15 +9,25 @@ const button = document.getElementById("button");
 
 
 let checkPasswords = () => {
-    if (password != confirmPassword){
-        console.log(password.innerText)
-        return false;
+    if (password.value != confirmPassword.value){
+        return;
     } else {
-        return true;
-    }
+        let firstNameLastName = firstName.value + " " + lastName.value;
+        let newUserArray = [];
+        newUserArray.push(firstNameLastName, email.value, password.value);
+        fetchCall(newUserArray)
+};
+};
+
+let fetchCall = (newUser) => {
+    fetch('/signup/newuser', {
+        method: 'POST', 
+        body: JSON.stringify(newUser)
+    })
 }
 
 
 button.addEventListener("click", function() {
     checkPasswords();
-})
+});
+
