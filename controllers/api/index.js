@@ -5,6 +5,6 @@ const apiRoutes = Router();
 
 apiRoutes.use('/list', listRoute);
 
-apiRoutes.use('/api');
+// apiRoutes.use('/api');
 
-module.export = apiRoutes;
+module.exports = apiRoutes;
