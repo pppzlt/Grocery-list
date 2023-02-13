@@ -15,12 +15,13 @@ List.belongsToMany(User, {
 
 List.hasMany(Items, {
   foreignKey: "list_id",
-  onDelete: "SET NULL",
+  onDelete: "CASCADE",
 });
 
-// Items.hasOne(List, {
-//   foreignKey: "items_id",
-//   onDelete: "SET NULL",
-// });
+Items.hasOne(List, {
+  foreignKey: "list_id",
+});
+
+
 
 module.exports = { User, Items, List, UserList };
