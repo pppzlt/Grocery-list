@@ -1,26 +1,26 @@
 const User = require("./User");
 const Items = require("./Items");
-const Group = require("./Group");
-const UserGroup = require("./UserGroup");
+const List = require("./List");
+const UserList = require("./UserList");
 
-User.belongsToMany(Group, {
-  through: "user_group",
+User.belongsToMany(List, {
+  through: "user_list",
   foreignKey: 'user_id'
 });
 
-Group.belongsToMany(User, {
-  through: "user_group",
-  foreignKey: 'group_id'
+List.belongsToMany(User, {
+  through: "user_list",
+  foreignKey: 'list_id'
 });
 
-Group.hasMany(Items, {
-  foreignKey: "group_id",
+List.hasMany(Items, {
+  foreignKey: "list_id",
   onDelete: "SET NULL",
 });
 
-// Items.hasOne(Group, {
+// Items.hasOne(List, {
 //   foreignKey: "items_id",
 //   onDelete: "SET NULL",
 // });
 
-module.exports = { User, Items, Group, UserGroup };
+module.exports = { User, Items, List, UserList };
