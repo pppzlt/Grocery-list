@@ -10,7 +10,7 @@ const button = document.getElementById("button");
 
 let checkPasswords = () => {
     if (password != confirmPassword){
-
+        console.log(password.innerText)
         return false;
     } else {
         return true;
