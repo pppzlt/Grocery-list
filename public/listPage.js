@@ -9,7 +9,23 @@ addNewList.addEventListener('click', () => {
 function addElement() {
     console.log("Hello!");
     const doc = document.createElement('div');
-    doc.innerHTML = 'Hello World'; // template literal here 
+    doc.innerHTML = `<div class="card d-flex justify-content-center col-6">
+    <div class="card-body d-flex justify-content-between shadow">
+        <div>
+            <h5 class="card-title">Weekly List</h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+        </div>
+        <div class = "d-flex flex-column justify-content-center">
+            <span class="material-symbols-outlined px-3">
+                    edit_note
+            <a href="#" class="card-link">
+                <span class="material-symbols-outlined">
+                    add_shopping_cart
+                </span>
+            </a>
+        </div>
+    </div>
+</div>` // template literal here 
     const container = document.querySelector('#parent-div');
     container.appendChild(doc);
 }
