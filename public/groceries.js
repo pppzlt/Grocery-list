@@ -17,12 +17,13 @@ const deletebtns = document.querySelectorAll('#delete');
 
 (async () => {
     //fetch list of lists to populate the list options
-    let response = await fetch("");
+    let response = await (await fetch("/masterlist/all")).json();
+    // console.log(response);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < response.length; i++) {
         let el = document.createElement("option");
-        el.textContent = "1";
-        el.value = "1";
+        el.textContent = response[i].list_name;
+        el.value = response[i].list_id;
         itemSel.append(el);
     }
 })();
@@ -35,11 +36,9 @@ itembtn.addEventListener("click", async () => {
         frequency: itemFreq.value,
         category: itemCat.value,
         comment: itemComment.value,
-        //needs changed
-        //list_id: itemSel.value,
-        list_id: 1,
+        list_id: itemSel.value,
     };
-    console.log(newItem);
+    // console.log(newItem);
     let response = await fetch('/innerlist', {
         method: "POST",
         headers: {

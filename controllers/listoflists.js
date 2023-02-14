@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const { User, List, UserList } = require("../models");
 
+// url /masterlist
 router.get("/", async (req, res) => {
     try {
         let dbAllList = await List.findAll();
         let allList = dbAllList.map((list) => list.get({ plain: true }));
-        console.log(allList)
         res.render("listPage", {allList});
     } catch (err) {
         res.status(500).json(err);
@@ -36,14 +36,13 @@ router.delete('/:list_id', async (req, res) => {
     }
 })
 
-// router.get("/all", async (req, res) => {
-//     try {
-//         console.log("Im broken");
-//         let findList = await List.findAll();
-//         console.log(findList);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+router.get("/all", async (req, res) => {
+    try {
+        let findList = await List.findAll();
+        res.json(findList)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
