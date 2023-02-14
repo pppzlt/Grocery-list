@@ -1,6 +1,8 @@
 const addNewList = document.getElementById("addNewList")
 const toggle = document.querySelector("#input-card");
 const addBtn = document.querySelector("#inputbtn");
+const listNameInput = document.getElementById("listNameInput");
+const descriptInput = document.getElementById("descriptInput");
 console.log(addNewList);
 
 // on page boot up render lists
@@ -69,6 +71,12 @@ addNewList.addEventListener("click", () => {
     toggle.classList.add("visible");
 });
 
-addBtn.addEventListener("click", () => {
+
+addBtn.addEventListener("click", async () => {
     console.log("hello world!")
+    var text = listNameInput.value;
+    var text2 = descriptInput.value;
+    console.log(text);
+    console.log(text2);
 })
+
