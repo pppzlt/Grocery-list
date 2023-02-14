@@ -63,10 +63,6 @@ deletebtns.forEach((btn) => {
         await fetch('/innerlist/' + id, {
             method: 'DELETE'
         })
-        // this.parentElement.parentElement.parentElement.parentElement.style.animationPlayState = 'running';
-        // this.parentElement.parentElement.parentElement.parentElement.addEventListener('animationend', () => {
-        //     this.parentElement.parentElement.parentElement.parentElement.remove();
-        // })
         location.reload();
     });
 })
