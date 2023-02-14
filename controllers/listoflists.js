@@ -22,6 +22,13 @@ router.get("/all", async (req, res) => {
     }
 });
 
+router.post("/all",(req, res) => {
+    try {
+        console.log("path working")
+    }catch(err){
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;
 

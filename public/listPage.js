@@ -76,7 +76,19 @@ addBtn.addEventListener("click", async () => {
     console.log("hello world!")
     var text = listNameInput.value;
     var text2 = descriptInput.value;
-    console.log(text);
-    console.log(text2);
+
+    const newList = {
+        list_name: text,
+        list_descrip: text2,
+    }
+    
 })
+
+let response = fetch("/masterlist/all", {
+    method:'POST',
+    headers: ''
+
+}
+
+)
 
