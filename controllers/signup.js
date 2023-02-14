@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, UserList } = require("../models");
 const bcrypt = require('bcrypt');
-
+// /signup
 router.get("/", async (req, res) => {
     try {
         res.render('signup');
@@ -20,6 +20,7 @@ router.post("/newuser", async (req, res) => {
         
         let newLog = await User.create(newUser);
         console.log(newLog);
+        res.status(200).json(newUser)
     } catch (err){
         res.status(500).json(err);
     };
