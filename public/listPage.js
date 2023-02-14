@@ -5,11 +5,6 @@ const listNameInput = document.getElementById("listNameInput");
 const descriptInput = document.getElementById("descriptInput");
 console.log(addNewList);
 
-// on page boot up render lists
-// on click button add new list
-// delete liston click trashcan
-// on click edit - edit names of list
-
 // addNewList.addEventListener('click', () => {
 //     addElement();
 // });
@@ -81,14 +76,12 @@ addBtn.addEventListener("click", async () => {
         list_name: text,
         list_descrip: text2,
     }
+    let response = fetch("/masterlist", {
+        method:'POST',
+        headers:{'Content-Type': "application/json",
     
-})
-
-let response = fetch("/masterlist/all", {
-    method:'POST',
-    headers: ''
-
-}
-
-)
+    },
+    body:JSON.stringify(newList)
+    }); 
+});
 
