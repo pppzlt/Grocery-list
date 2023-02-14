@@ -1,22 +1,22 @@
 [
   {
-    "listName": "party time",
-    "listDescrip": "spicy food"
+    "list_name": "party time",
+    "list_descrip": "spicy food"
   },
   {
-    "listName": "sodium deficiency",
-    "listDescrip": "oops all salt"
+    "list_name": "sodium deficiency",
+    "list_descrip": "oops all salt"
   },
   {
-    "listName": "diet food",
-    "listDescrip": "my cabbages"
+    "list_name": "diet food",
+    "list_descrip": "my cabbages"
   },
   {
-    "listName": "vegan stuff",
-    "listDescrip": "lets eat grass"
+    "list_name": "vegan stuff",
+    "list_descrip": "lets eat grass"
   },
   {
-    "listName": "123",
-    "listDescrip": "456"
+    "list_name": "123",
+    "list_descrip": "456"
   }
 ]

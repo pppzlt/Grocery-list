@@ -10,10 +10,10 @@ List.init(
             primaryKey: true,
             autoIncrement: true
         },
-        listName: {
+        list_name: {
             type: DataTypes.STRING
         },
-        listDescrip: {
+        list_descrip: {
             type: DataTypes.STRING
         },
         // references the 'id' of 'user' to find which one is within a list
