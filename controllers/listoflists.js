@@ -4,7 +4,7 @@ const { User, List } = require("../models");
 router.get("/", async (req, res) => {
     try {
         res.render('listPage');
-
+        
     } catch (err){
         res.status(500).json(err);
     }   
@@ -23,5 +23,5 @@ router.get("/all", async (req, res) => {
 });
 
 
-
 module.exports = router;
+
