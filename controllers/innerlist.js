@@ -37,6 +37,7 @@ router.delete('/:items_id', async (req, res) => {
   }
 })
 
+// url innerlist/:id
 router.get("/:id", async (req, res) => {
     try {
         let dbitems = await Items.findAll({
