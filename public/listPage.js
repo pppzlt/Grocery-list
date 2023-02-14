@@ -9,9 +9,10 @@ console.log(addNewList);
 addNewList.addEventListener('click', () => {
     addElement();
 });
-function addElement() {
+async function addElement() {
     console.log("Hello!");
-    const listData = getAllWeeklyLists();
+    const listData = await getAllWeeklyLists();
+    console.log(listData);
     if (listData) {
         const listCont = document.getElementById('parent-div')
         listData.map((elem , index) =>{
@@ -43,12 +44,12 @@ function addElement() {
             
             ` 
         })
+        listCont.appendChild(doc);
     }
-    // const container = document.querySelector('#parent-div');
-    listCont.appendChild(doc);
 }
+
 function getAllWeeklyLists() {
-    fetch('/List/all').then((result) =>{
+    return fetch('/masterlist/all').then((result) =>{
         console.log(result);
         if(!result.ok){
             console.log('Can not get list');

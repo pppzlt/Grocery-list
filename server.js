@@ -1,6 +1,6 @@
 const exphbs = require("express-handlebars");
 const express = require ('express');
-const routes = require ("./controllers/");
+const routes = require ("./controllers");
 const sequelize = require("./config/connection");
 
 
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 
 
-sequelize.sync().then(() => {
+sequelize.sync({force: false}).then(() => {
     app.listen(PORT, () => {
         console.log('Lets go MVPS');
     });

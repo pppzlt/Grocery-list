@@ -10,10 +10,10 @@ router.get("/", async (req, res) => {
     }   
 });
 
-router.get("/List/all", async (req, res) => {
+router.get("/all", async (req, res) => {
     try { 
         console.log('Im broken');
-      let findList = List.findAll();
+      let findList = await List.findAll();
       console.log(findList);
     } catch (err){
         
