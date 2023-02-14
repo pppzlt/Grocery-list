@@ -6,6 +6,7 @@ router.get("/", async (req, res) => {
     try {
         let dbAllList = await List.findAll();
         let allList = dbAllList.map((list) => list.get({ plain: true }));
+        // console.log(allList)
         res.render("listPage", {allList});
     } catch (err) {
         res.status(500).json(err);
