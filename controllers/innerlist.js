@@ -6,6 +6,7 @@ router.get("/", async (req, res) => {
     try {
         let dbitems = await Items.findAll({ include: List });
         let items = dbitems.map((item) => item.get({ plain: true }));
+        console.log(items)
         res.render("groceries", {
             items,
         });
