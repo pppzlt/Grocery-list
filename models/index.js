@@ -18,7 +18,7 @@ List.hasMany(Items, {
   onDelete: "CASCADE",
 });
 
-Items.hasOne(List, {
+Items.belongsTo(List, {
   foreignKey: "list_id",
 });
 
