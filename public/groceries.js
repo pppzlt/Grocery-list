@@ -2,7 +2,7 @@
 
 //select elements
 const newItemBtn = document.querySelector("#addNewItem");
-const toggle = document.querySelector("#toggle");
+const toggle = document.querySelector("#input-card");
 //select inputs from user
 const itemName = document.querySelector("#item_name");
 const itemQuantity = document.querySelector("#quantity");
@@ -11,6 +11,9 @@ const itemCat = document.querySelector("#category");
 const itemSel = document.querySelector("#listname");
 const itemComment = document.querySelector("#comment");
 const itembtn = document.querySelector("#inputbtn");
+//select all delete button
+const deletebtns = document.querySelectorAll('#delete');
+
 
 (async () => {
     //fetch list of lists to populate the list options
@@ -24,7 +27,7 @@ const itembtn = document.querySelector("#inputbtn");
     }
 })();
 
-
+//add eventlistener on add button in input card
 itembtn.addEventListener("click", async () => {
     let newItem = {
         item: itemName.value,
@@ -48,9 +51,27 @@ itembtn.addEventListener("click", async () => {
     return response.json();
 });
 
+//add eventlistener on add item button 
 newItemBtn.addEventListener("click", () => {
     toggle.classList.remove("invisible");
     toggle.classList.add("visible");
 });
+
+deletebtns.forEach((btn) => {
+    btn.addEventListener('click', async function () {
+        let id = this.parentElement.children[0].textContent;
+
+        await fetch('/innerlist/' + id, {
+            method: 'DELETE'
+        })
+        location.reload();
+    });
+})
+
+
+
+
+
+
 
 console.log("hello world");

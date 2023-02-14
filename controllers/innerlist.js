@@ -6,7 +6,6 @@ router.get("/", async (req, res) => {
     try {
         let dbitems = await Items.findAll({ include: List });
         let items = dbitems.map((item) => item.get({ plain: true }));
-        console.log(items);
         res.render("groceries", {
             items,
         });
@@ -24,6 +23,19 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.delete('/:items_id', async (req, res) => {
+  try {
+    let result = await Items.destroy({
+      where: {
+        items_id: req.params.items_id
+      }
+    });
+    res.status(200).json(result)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
 router.get("/:id", async (req, res) => {
     try {
         let dbitems = await Items.findAll({
@@ -33,7 +45,6 @@ router.get("/:id", async (req, res) => {
             },
         });
         let items = dbitems.map((item) => item.get({ plain: true }));
-        console.log(items);
         res.render("groceries", {
             items,
             list: "true",
