@@ -1,4 +1,6 @@
 const addNewList = document.getElementById("addNewList")
+const toggle = document.querySelector("#input-card");
+const addBtn = document.querySelector("#inputbtn");
 console.log(addNewList);
 
 // on page boot up render lists
@@ -6,9 +8,9 @@ console.log(addNewList);
 // delete liston click trashcan
 // on click edit - edit names of list
 
-addNewList.addEventListener('click', () => {
-    addElement();
-});
+// addNewList.addEventListener('click', () => {
+//     addElement();
+// });
 async function addElement() {
     console.log("Hello!");
     const listData = await getAllWeeklyLists();
@@ -59,32 +61,14 @@ function getAllWeeklyLists() {
         console.log(value)
         return value;
     })
-    .catch((err)=> console.log(err));
+    .catch((err)=> console.log(err));  
 }
-// addNewList.addEventListener('click', () => {
-//     addElement();
-// });
 
-// function addElement() {
-//     console.log("Hello!");
-//     const doc = document.createElement('div');
-//     doc.innerHTML = `<div class="card d-flex justify-content-center col-6">
-//     <div class="card-body d-flex justify-content-between shadow">
-//         <div>
-//             <h5 class="card-title">Weekly List</h5>
-//             <h6 class="card-subtitle mb-2 text-muted"></h6>
-//         </div>
-//         <div class = "d-flex flex-column justify-content-center">
-//             <span class="material-symbols-outlined px-3">
-//                     edit_note
-//             <a href="#" class="card-link">
-//                 <span class="material-symbols-outlined">
-//                     add_shopping_cart
-//                 </span>
-//             </a>
-//         </div>
-//     </div>
-// </div>` 
-//     const container = document.querySelector('#parent-div');
-//     container.appendChild(doc);
-// }
+addNewList.addEventListener("click", () => {
+    toggle.classList.remove("invisible");
+    toggle.classList.add("visible");
+});
+
+addBtn.addEventListener("click", () => {
+    console.log("hello world!")
+})

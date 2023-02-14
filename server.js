@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 
 
-sequelize.sync({force: false}).then(() => {
+sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log('Lets go MVPS');
     });
