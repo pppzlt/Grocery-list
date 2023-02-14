@@ -20,7 +20,7 @@ app.use(express.static("public"));
 app.use(routes);
 
 app.get('/', (req, res) => {
-  console.log('hello msg')
+  // console.log('hello msg')
   res.send('Hello World')
 })
 
