@@ -30,7 +30,7 @@ Items.init(
             references: {
                 model: 'list',
                 key: 'list_id',
-              },
+            },
         },
     },
     {

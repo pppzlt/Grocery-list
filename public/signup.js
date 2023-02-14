@@ -17,7 +17,7 @@ let checkPasswords = () => {
             name: firstNameLastName,
             email: email.value,
             password: password.value, 
-        }
+        };
         
 
 
@@ -26,7 +26,6 @@ let checkPasswords = () => {
 };
 
 let fetchCall = async (newUser) => {
-        console.log(newUser);
         await fetch('/signup/newuser', {
         method: 'POST', 
         headers: {
