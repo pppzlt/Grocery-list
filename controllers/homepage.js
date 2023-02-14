@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, List } = require("../models");
 const bcrypt = require('bcrypt');
-// /home
+
 router.get("/", async (req, res) => {
     try {
         res.render('home');
