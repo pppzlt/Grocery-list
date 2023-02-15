@@ -6,14 +6,10 @@ const listNameInput = document.getElementById("listNameInput");
 const descriptInput = document.getElementById("descriptInput");
 const deletebtns = document.querySelectorAll("#delete");
 const closebtns = document.getElementById("inputclosebtn")
-<<<<<<< HEAD
-// toggling the cards on and off 
-=======
 
 //logout button
 const logoutbtn = document.querySelector("#logout");
 
->>>>>>> e1894fd4f06648ab8bd522dd2b3d7d99f57a0caf
 addNewList.addEventListener("click", () => {
     toggle.classList.remove("invisible");
     toggle.classList.add("visible");
