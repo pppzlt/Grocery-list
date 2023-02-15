@@ -16,7 +16,23 @@
     "list_descrip": "lets eat grass"
   },
   {
-    "list_name": "123",
-    "list_descrip": "456"
+    "list_name": "Snacks",
+    "list_descrip": "Snacks for movies this weekend."
+  },
+  {
+    "list_name": "Do not eat",
+    "list_descrip": "Suspicious food"
+  },
+  {
+    "list_name": "actual car parts",
+    "list_descrip": "mechanic food"
+  },
+  {
+    "list_name": "School supplies",
+    "list_descrip": "stationary stuff"
+  },
+  {
+    "list_name": "vegan stuff II",
+    "list_descrip": "lets eat an entire tree."
   }
 ]
