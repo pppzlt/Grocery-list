@@ -1,3 +1,4 @@
+// import express router and the correct tables
 const router = require("express").Router();
 const { User, List, UserList } = require("../models");
 const withAuth = require("../utils/auth");
@@ -8,13 +9,12 @@ router.get("/", async (req, res) => {
         console.log(req.session.user_id)
         let dbAllList = await List.findAll();
         let allList = dbAllList.map((list) => list.get({ plain: true }));
-        // console.log(allList)
         res.render("listPage", {allList});
     } catch (err) {
         res.status(500).json(err);
     }
 });
-
+//create a new list
 router.post('/',async (req, res) => {
     try {
         let result = await List.create(req.body);
@@ -25,7 +25,7 @@ router.post('/',async (req, res) => {
         res.status(400).json(err)
     }
 });
-
+// delete something based off of its list id
 router.delete('/:list_id', async (req, res) => {
     try {
         let result = await List.destroy({
@@ -38,7 +38,7 @@ router.delete('/:list_id', async (req, res) => {
         res.status(400).json(err)
     }
 })
-
+// get all the lists for rendering to the page
 router.get("/all", async (req, res) => {
     try {
         let findList = await List.findAll();

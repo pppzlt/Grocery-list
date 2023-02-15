@@ -11,6 +11,7 @@ const itemCat = document.querySelector("#category");
 const itemSel = document.querySelector("#listname");
 const itemComment = document.querySelector("#comment");
 const itembtn = document.querySelector("#inputbtn");
+const closebtns = document.getElementById("inputclosebtn")
 //select all delete button
 const deletebtns = document.querySelectorAll("#delete");
 //logout button
@@ -55,6 +56,11 @@ itembtn.addEventListener("click", async () => {
 newItemBtn.addEventListener("click", () => {
     toggle.classList.remove("invisible");
     toggle.classList.add("visible");
+});
+
+closebtns.addEventListener("click", () => {
+    toggle.classList.remove("visible");
+    toggle.classList.add("invisible");
 });
 
 deletebtns.forEach((btn) => {

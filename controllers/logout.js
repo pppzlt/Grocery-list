@@ -1,3 +1,4 @@
+// importing in express router and the correct tables
 const router = require("express").Router();
 const { User, List } = require("../models");
 
@@ -6,7 +7,6 @@ const { User, List } = require("../models");
 //     try {
 //         res.render('home');
 //         res.status(200).json({message: 'Hello there logout!'});
-
 //     } catch (err){
 //         res.status(500).json(err);
 //     }
@@ -21,6 +21,5 @@ router.post("/", (req, res) => {
         res.status(404).end();
     }
 });
-
-
+// export router
 module.exports = router;
