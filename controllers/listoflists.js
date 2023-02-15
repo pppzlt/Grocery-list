@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const { User, List, UserList } = require("../models");
+const withAuth = require("../utils/auth");
 
 // url /masterlist
 router.get("/", async (req, res) => {
     try {
+        console.log(req.session.user_id)
         let dbAllList = await List.findAll();
         let allList = dbAllList.map((list) => list.get({ plain: true }));
         // console.log(allList)

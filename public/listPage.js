@@ -5,6 +5,8 @@ const listNameInput = document.getElementById("listNameInput");
 const descriptInput = document.getElementById("descriptInput");
 const deletebtns = document.querySelectorAll("#delete");
 
+const logoutbtn = document.querySelector("#logout");
+
 // console.log(addNewList);
 
 // addNewList.addEventListener('click', () => {
@@ -22,7 +24,6 @@ const deletebtns = document.querySelectorAll("#delete");
 //             doc.setAttribute("id", elem.list_id);
 //             doc.innerHTML = `
 
-
 //             <div class="card mt-3">
 //                 <div class="card-body d-flex justify-content-between shadow">
 //                     <div>
@@ -32,7 +33,7 @@ const deletebtns = document.querySelectorAll("#delete");
 //                     <div class = "d-flex flex-row align-items-center justify-content-center">
 //                         <span class="material-symbols-outlined px-3">
 //                             edit_note
-//                         </span>    
+//                         </span>
 //                         <a href="#" class="card-link">
 //                             <span class="material-symbols-outlined">
 //                                 add_shopping_cart
@@ -41,8 +42,7 @@ const deletebtns = document.querySelectorAll("#delete");
 //                     </div>
 //                 </div>
 //             </div>
-            
-            
+
 //             `;
 //         });
 //         listCont.appendChild(doc);
@@ -99,3 +99,18 @@ deletebtns.forEach((btn) => {
         location.reload();
     });
 });
+
+const logout = async () => {
+    const response = await fetch("/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+        document.location.replace("/home");
+    } else {
+        alert(response.statusText);
+    }
+};
+
+logoutbtn.addEventListener("click", logout);

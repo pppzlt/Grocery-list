@@ -12,8 +12,9 @@ const itemSel = document.querySelector("#listname");
 const itemComment = document.querySelector("#comment");
 const itembtn = document.querySelector("#inputbtn");
 //select all delete button
-const deletebtns = document.querySelectorAll('#delete');
-
+const deletebtns = document.querySelectorAll("#delete");
+//logout button
+const logoutbtn = document.querySelector("#logout");
 
 (async () => {
     //fetch list of lists to populate the list options
@@ -39,38 +40,45 @@ itembtn.addEventListener("click", async () => {
         list_id: itemSel.value,
     };
     // console.log(newItem);
-    let response = await fetch('/innerlist', {
+    let response = await fetch("/innerlist", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(newItem),
     });
-    location.reload()
+    location.reload();
     return response.json();
 });
 
-//add eventlistener on add item button 
+//add eventlistener on add item button
 newItemBtn.addEventListener("click", () => {
     toggle.classList.remove("invisible");
     toggle.classList.add("visible");
 });
 
 deletebtns.forEach((btn) => {
-    btn.addEventListener('click', async function () {
+    btn.addEventListener("click", async function () {
         let id = this.parentElement.children[0].textContent;
-        
-        await fetch('/innerlist/' + id, {
-            method: 'DELETE'
-        })
+
+        await fetch("/innerlist/" + id, {
+            method: "DELETE",
+        });
         location.reload();
     });
-})
+});
 
+const logout = async () => {
+    const response = await fetch("/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+    });
 
+    if (response.ok) {
+        document.location.replace("/home");
+    } else {
+        alert(response.statusText);
+    }
+};
 
-
-
-
-
-console.log("hello world");
+logoutbtn.addEventListener("click", logout);

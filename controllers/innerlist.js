@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const { User, List, Items } = require("../models");
+const withAuth = require("../utils/auth");
 
 
 router.get("/", async (req, res) => {
     try {
+        console.log(req.session.user_id);
         let dbitems = await Items.findAll({ include: List });
         let items = dbitems.map((item) => item.get({ plain: true }));
         // console.log(items)
@@ -40,6 +42,7 @@ router.delete('/:items_id', async (req, res) => {
 // url innerlist/:id
 router.get("/:id", async (req, res) => {
     try {
+        console.log(req.session.user_id);
         let dbitems = await Items.findAll({
             include: List,
             where: {
