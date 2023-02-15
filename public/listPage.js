@@ -1,3 +1,4 @@
+// getting all of the elements
 const addNewList = document.getElementById("addNewList");
 const toggle = document.querySelector("#input-card");
 const addBtn = document.querySelector("#inputbtn");
@@ -17,7 +18,7 @@ closebtns.addEventListener("click", () => {
     toggle.classList.remove("visible");
     toggle.classList.add("invisible");
 });
-
+//adds a list to the database
 addBtn.addEventListener("click", async () => {
     var listname = listNameInput.value;
     var listdes = descriptInput.value;
@@ -33,7 +34,7 @@ addBtn.addEventListener("click", async () => {
     });
     location.reload();
 });
-
+// listens to all the delete buttons and deletes the card if clicked from the database
 deletebtns.forEach((btn) => {
     btn.addEventListener("click", async function () {
         let id = this.parentElement.children[0].textContent;
@@ -44,7 +45,7 @@ deletebtns.forEach((btn) => {
         location.reload();
     });
 });
-
+// logs out when button is clicked
 const logout = async () => {
     const response = await fetch("/logout", {
         method: "POST",
