@@ -1,90 +1,61 @@
-const addNewList = document.getElementById("addNewList")
-console.log(addNewList);
+const addNewList = document.getElementById("addNewList");
+const toggle = document.querySelector("#input-card");
+const addBtn = document.querySelector("#inputbtn");
+const listNameInput = document.getElementById("listNameInput");
+const descriptInput = document.getElementById("descriptInput");
+const deletebtns = document.querySelectorAll("#delete");
+const closebtns = document.getElementById("inputclosebtn")
 
-// on page boot up render lists
-// on click button add new list
-// delete liston click trashcan
-// on click edit - edit names of list
+//logout button
+const logoutbtn = document.querySelector("#logout");
 
-addNewList.addEventListener('click', () => {
-    addElement();
+addNewList.addEventListener("click", () => {
+    toggle.classList.remove("invisible");
+    toggle.classList.add("visible");
 });
-async function addElement() {
-    console.log("Hello!");
-    const listData = await getAllWeeklyLists();
-    console.log(listData);
-    if (listData) {
-        const listCont = document.getElementById('parent-div')
-        listData.map((elem , index) =>{
-            console.log(elem, index);
-            const doc = document.createElement('div');
-            doc.setAttribute('id', elem.list_id)
-            doc.innerHTML = `
+closebtns.addEventListener("click", () => {
+    toggle.classList.remove("visible");
+    toggle.classList.add("invisible");
+});
 
+addBtn.addEventListener("click", async () => {
+    var listname = listNameInput.value;
+    var listdes = descriptInput.value;
 
-            <div class="card mt-3">
-                <div class="card-body d-flex justify-content-between shadow">
-                    <div>
-                        <h5 class="card-title">${elem}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">This is your most current list</h6>
-                    </div>
-                    <div class = "d-flex flex-row align-items-center justify-content-center">
-                        <span class="material-symbols-outlined px-3">
-                            edit_note
-                        </span>    
-                        <a href="#" class="card-link">
-                            <span class="material-symbols-outlined">
-                                add_shopping_cart
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            
-            ` 
-        })
-        listCont.appendChild(doc);
+    const newList = {
+        list_name: listname,
+        list_descrip: listdes,
+    };
+    let response = await fetch("/masterlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newList),
+    });
+    location.reload();
+});
+
+deletebtns.forEach((btn) => {
+    btn.addEventListener("click", async function () {
+        let id = this.parentElement.children[0].textContent;
+
+        await fetch("/masterlist/" + id, {
+            method: "DELETE",
+        });
+        location.reload();
+    });
+});
+
+const logout = async () => {
+    const response = await fetch("/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+        document.location.replace("/home");
+    } else {
+        alert(response.statusText);
     }
-}
+};
 
-function getAllWeeklyLists() {
-    return fetch('/masterlist/all').then((result) =>{
-        console.log(result);
-        if(!result.ok){
-            console.log('Can not get list');
-        }
-        return result.json()
-    }).then((value) => {
-        console.log(value)
-        return value;
-    })
-    .catch((err)=> console.log(err));
-}
-// addNewList.addEventListener('click', () => {
-//     addElement();
-// });
-
-// function addElement() {
-//     console.log("Hello!");
-//     const doc = document.createElement('div');
-//     doc.innerHTML = `<div class="card d-flex justify-content-center col-6">
-//     <div class="card-body d-flex justify-content-between shadow">
-//         <div>
-//             <h5 class="card-title">Weekly List</h5>
-//             <h6 class="card-subtitle mb-2 text-muted"></h6>
-//         </div>
-//         <div class = "d-flex flex-column justify-content-center">
-//             <span class="material-symbols-outlined px-3">
-//                     edit_note
-//             <a href="#" class="card-link">
-//                 <span class="material-symbols-outlined">
-//                     add_shopping_cart
-//                 </span>
-//             </a>
-//         </div>
-//     </div>
-// </div>` 
-//     const container = document.querySelector('#parent-div');
-//     container.appendChild(doc);
-// }
+logoutbtn.addEventListener("click", logout);

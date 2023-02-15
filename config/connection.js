@@ -1,7 +1,8 @@
+// requiring sequelize npm and the dot env file
 const Sequelize = require ('sequelize');
 require ('dotenv').config();
 let sequelize;
-
+// connecting to jawsdb and plugging in the passwords
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
@@ -16,5 +17,5 @@ if (process.env.JAWSDB_URL) {
         },
     );
 }
-
+// exporting sequelize
 module.exports = sequelize;
