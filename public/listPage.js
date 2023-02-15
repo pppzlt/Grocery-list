@@ -6,6 +6,9 @@ const descriptInput = document.getElementById("descriptInput");
 const deletebtns = document.querySelectorAll("#delete");
 const closebtns = document.getElementById("inputclosebtn")
 
+//logout button
+const logoutbtn = document.querySelector("#logout");
+
 addNewList.addEventListener("click", () => {
     toggle.classList.remove("invisible");
     toggle.classList.add("visible");
