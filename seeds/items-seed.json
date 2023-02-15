@@ -1,6 +1,6 @@
 [
     {
-      "item": "apple",
+      "item": "Soup",
       "quantity": 1,
       "frequency": 2,
       "category": "food",
@@ -8,12 +8,12 @@
       "list_id": 1
     },
     {
-      "item": "turkey",
-      "quantity": 3,
-      "frequency": 2,
+      "item": "F1 racing noises in a can",
+      "quantity": 30,
+      "frequency": 5,
       "category": "food",
-      "comment": "buy it",
-      "list_id": 2
+      "comment": "2 Ferraris a'la mode.",
+      "list_id": 1
     },
     {
       "item": "toilet paper",
@@ -25,12 +25,107 @@
 
     },
     {
-      "item": "nacho",
-      "quantity": 20,
+      "item": "Melona Bars",
+      "quantity": 60000,
+      "frequency": 1,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 4
+    },
+    {
+      "item": "tofu",
+      "quantity": 10,
       "frequency": 2,
       "category": "food",
       "comment": "buy it thank",
       "list_id": 4
+    },
+    {
+      "item": "crab dip",
+      "quantity": 20,
+      "frequency": 1,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 2
+    },
+    {
+      "item": "shrimp",
+      "quantity": 200,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 5
+    },
+    {
+      "item": "frozen veggies",
+      "quantity": 5,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 5
+    },
+    {
+      "item": "flowers",
+      "quantity": 60,
+      "frequency": 1,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 6
+    },
+    {
+      "item": "sparkling water",
+      "quantity": 2000,
+      "frequency": 4,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 6
+    },
+    {
+      "item": "soda",
+      "quantity": 7,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 6
+    },
+    {
+      "item": "candy",
+      "quantity": 20,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 7
+    },
+    {
+      "item": "chicken",
+      "quantity": 5,
+      "frequency": 1,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 8
+    },
+    {
+      "item": "beef",
+      "quantity": 1,
+      "frequency": 2,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 9
+    },
+    {
+      "item": "cookies",
+      "quantity": 200,
+      "frequency": 1,
+      "category": "food",
+      "comment": "buy it thank",
+      "list_id": 9
+    },
+    {
+      "item": "lettuce",
+      "quantity": 5,
+      "frequency": 2,
+      "category": "food",
+      "comment": "leafy",
+      "list_id": 8
     }
-   
   ]

@@ -1,22 +1,38 @@
 [
   {
-    "listName": "party time",
-    "listDescrip": "spicy food"
+    "list_name": "party time",
+    "list_descrip": "spicy food"
   },
   {
-    "listName": "sodium deficiency",
-    "listDescrip": "oops all salt"
+    "list_name": "sodium deficiency",
+    "list_descrip": "oops all salt"
   },
   {
-    "listName": "diet food",
-    "listDescrip": "my cabbages"
+    "list_name": "diet food",
+    "list_descrip": "my cabbages"
   },
   {
-    "listName": "vegan stuff",
-    "listDescrip": "lets eat grass"
+    "list_name": "vegan stuff",
+    "list_descrip": "lets eat grass"
   },
   {
-    "listName": "123",
-    "listDescrip": "456"
+    "list_name": "Snacks",
+    "list_descrip": "Snacks for movies this weekend."
+  },
+  {
+    "list_name": "Do not eat",
+    "list_descrip": "Suspicious food"
+  },
+  {
+    "list_name": "actual car parts",
+    "list_descrip": "mechanic food"
+  },
+  {
+    "list_name": "School supplies",
+    "list_descrip": "stationary stuff"
+  },
+  {
+    "list_name": "vegan stuff II",
+    "list_descrip": "lets eat an entire tree."
   }
 ]

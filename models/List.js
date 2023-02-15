@@ -10,10 +10,10 @@ List.init(
             primaryKey: true,
             autoIncrement: true
         },
-        listName: {
+        list_name: {
             type: DataTypes.STRING
         },
-        listDescrip: {
+        list_descrip: {
             type: DataTypes.STRING
         },
         // references the 'id' of 'user' to find which one is within a list
@@ -27,8 +27,6 @@ List.init(
     },
     {
         sequelize,
-        // consider doing timestamps:true as a feature to let other users know when an item was added
-        // this will help determine if the list is outdated or updated
         timestamps: false,
         freezeTableName: true,
         underscored: true,

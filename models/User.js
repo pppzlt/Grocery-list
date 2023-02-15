@@ -25,7 +25,7 @@ User.init(
         //         model: 'list',
         //         key: 'list_id',
         //     }
-        // },
+        // }
     },
     {
         sequelize,
