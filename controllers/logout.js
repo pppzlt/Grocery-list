@@ -1,6 +1,8 @@
+// importing in express router and the correct tables
 const router = require("express").Router();
 const { User, List } = require("../models");
 
+// render the page
 router.get("/", async (req, res) => {
     try {
         res.render('home');
@@ -10,5 +12,5 @@ router.get("/", async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+// export router
 module.exports = router;

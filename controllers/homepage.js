@@ -1,7 +1,8 @@
+// requiring express router, the correct tables, and bcrypt
 const router = require("express").Router();
 const { User, List } = require("../models");
 const bcrypt = require('bcrypt');
-// url /home
+// url /home, render the page
 router.get("/", async (req, res) => {
     try {
         res.render('home');
@@ -9,11 +10,10 @@ router.get("/", async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+// login call that will check the encrypted passwords and return good or error
 router.post("/login", async(req, res) => {
     try{
         const passwordCheck = req.body;
-        // console.log(passwordCheck);
         const userData = await User.findOne({ where: { email : passwordCheck.email}});
         console.log(userData);
 
@@ -40,6 +40,5 @@ router.post("/login", async(req, res) => {
         res.status(500).json(err);
     }
 })
-
-
+// exporting router
 module.exports = router;

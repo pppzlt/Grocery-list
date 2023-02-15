@@ -11,6 +11,7 @@ const itemCat = document.querySelector("#category");
 const itemSel = document.querySelector("#listname");
 const itemComment = document.querySelector("#comment");
 const itembtn = document.querySelector("#inputbtn");
+const closebtns = document.getElementById("inputclosebtn")
 //select all delete button
 const deletebtns = document.querySelectorAll('#delete');
 
@@ -38,7 +39,9 @@ itembtn.addEventListener("click", async () => {
         comment: itemComment.value,
         list_id: itemSel.value,
     };
-    // console.log(newItem);
+
+    console.log(itemFreq.value)
+
     let response = await fetch('/innerlist', {
         method: "POST",
         headers: {
@@ -56,6 +59,11 @@ newItemBtn.addEventListener("click", () => {
     toggle.classList.add("visible");
 });
 
+closebtns.addEventListener("click", () => {
+    toggle.classList.remove("visible");
+    toggle.classList.add("invisible");
+});
+
 deletebtns.forEach((btn) => {
     btn.addEventListener('click', async function () {
         let id = this.parentElement.children[0].textContent;
@@ -67,10 +75,3 @@ deletebtns.forEach((btn) => {
     });
 })
 
-
-
-
-
-
-
-console.log("hello world");

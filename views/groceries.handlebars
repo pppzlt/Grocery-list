@@ -7,12 +7,11 @@
             </span>
         </a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Home</a></li>
-            <li><a class="dropdown-item" href="#">Lists</a></li>
+            <li><a class="dropdown-item" href="/masterlist">Lists</a></li>
             <li>
                 <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="/home">Sign out</a></li>
         </ul>
     </li>
 </ul>
@@ -33,7 +32,6 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="javascript:;" id="addNewItem">Add new Item</a></li>
-                <li><a class="dropdown-item" href="#" id="addNewUser">Add new User</a></li>
             </ul>
         </div>
     </div>
@@ -50,8 +48,13 @@
         <input type='text' class="form-control" id="quantity" placeholder="10" autocomplete="off"/>
       </div>
       <div class="mb-3">
-        <label for="frequency" class="form-label">Frequency</label>
-        <input type='text' class="form-control" id="frequency" placeholder="weekly" autocomplete="off"/>
+        <label for="listname" class="form-label">Listname</label>
+        <select class="form-select" id="frequency" autocomplete="off">
+            <option>Choose One...</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Quarterly">Quarterly</option>
+        </select>
       </div>
       <div class="mb-3">
         <label for="category" class="form-label">Category</label>
@@ -68,6 +71,7 @@
         <textarea row="2" class="form-control" id="comment" placeholder="" autocomplete="off"></textarea>
       </div>
       <div class="d-flex flex-row-reverse">
+      <button class="btn btn-primary mx-2" id="inputclosebtn">Close</button>
       <button class="btn btn-primary" id="inputbtn">Add</button>
       </div>
     </div>
