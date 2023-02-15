@@ -20,7 +20,7 @@ router.get("/", withAuth, async (req, res) => {
 });
 // create a new item to put in the table when added
 // url /innerlist
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         let result = await Items.create(req.body);
         res.status(200).json(result);
