@@ -1,6 +1,7 @@
+// importing sequelize with the defalut models
 const { Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
-
+// setting up the items table
 class Items extends Model {}
 
 Items.init(
@@ -41,5 +42,5 @@ Items.init(
         modelName: 'items'
     }
 );
-
+// exporting the table
 module.exports = Items;

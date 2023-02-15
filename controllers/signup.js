@@ -18,7 +18,6 @@ router.post("/newuser", async (req, res) => {
         newUser.password = await bcrypt.hash(req.body.password, 10);
         // new log would be the new user instance..
         let newLog = await User.create(newUser);
-        // console.log(newLog);
         req.session.save(() => {
             req.session.user_id = newLog.user_id;
             req.session.logged_in = true;
