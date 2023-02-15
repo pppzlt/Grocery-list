@@ -4,7 +4,8 @@ const { User, List, Items } = require("../models");
 const withAuth = require("../utils/auth");
 
 // render the page and get all the items inside of the correct list
-router.get("/", async (req, res) => {
+// url /innerlist
+router.get("/", withAuth, async (req, res) => {
     try {
         console.log(req.session.user_id);
         let dbitems = await Items.findAll({ include: List });
@@ -18,6 +19,7 @@ router.get("/", async (req, res) => {
     }
 });
 // create a new item to put in the table when added
+// url /innerlist
 router.post("/", async (req, res) => {
     try {
         let result = await Items.create(req.body);
@@ -27,21 +29,22 @@ router.post("/", async (req, res) => {
     }
 });
 // delete items based off of their id
-router.delete('/:items_id', async (req, res) => {
+// url /innerlist/:id
+router.delete("/:items_id", withAuth, async (req, res) => {
     try {
         let result = await Items.destroy({
-        where: {
-            items_id: req.params.items_id
-        }
+            where: {
+                items_id: req.params.items_id,
+            },
         });
-        res.status(200).json(result)
+        res.status(200).json(result);
     } catch (err) {
-        res.status(400).json(err)
+        res.status(400).json(err);
     }
-    })
+});
 
 // url innerlist/:id render things on the page based off of their id
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
     try {
         console.log(req.session.user_id);
         let dbitems = await Items.findAll({
