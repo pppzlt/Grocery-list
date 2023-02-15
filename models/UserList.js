@@ -1,9 +1,9 @@
+// importing in seqelize and the default models
 const { Model, DataTypes } = require("sequelize");
-
 const sequelize = require("../config/connection");
 
 class UserList extends Model {}
-
+// setting up the userlist table
 UserList.init(
   {
     user_id: {
@@ -29,5 +29,5 @@ UserList.init(
     modelName: "user_list",
   }
 );
-
+// exporting the user list table
 module.exports = UserList;

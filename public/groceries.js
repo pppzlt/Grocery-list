@@ -1,5 +1,3 @@
-// const newUserBtn = document.querySelector('#addNewUser');
-
 //select elements
 const newItemBtn = document.querySelector("#addNewItem");
 const toggle = document.querySelector("#input-card");
@@ -20,8 +18,7 @@ const logoutbtn = document.querySelector("#logout");
 (async () => {
     //fetch list of lists to populate the list options
     let response = await (await fetch("/masterlist/all")).json();
-    // console.log(response);
-
+    // for each item in thre response, create an option element and populate the dropdown menu
     for (let i = 0; i < response.length; i++) {
         let el = document.createElement("option");
         el.textContent = response[i].list_name;
@@ -40,7 +37,7 @@ itembtn.addEventListener("click", async () => {
         comment: itemComment.value,
         list_id: itemSel.value,
     };
-    // console.log(newItem);
+
     let response = await fetch("/innerlist", {
         method: "POST",
         headers: {
@@ -57,12 +54,12 @@ newItemBtn.addEventListener("click", () => {
     toggle.classList.remove("invisible");
     toggle.classList.add("visible");
 });
-
+//add eventlistener to the close menu button
 closebtns.addEventListener("click", () => {
     toggle.classList.remove("visible");
     toggle.classList.add("invisible");
 });
-
+//listen to all of the delete buttons, if clicked, delete that item from db
 deletebtns.forEach((btn) => {
     btn.addEventListener("click", async function () {
         let id = this.parentElement.children[0].textContent;
@@ -73,7 +70,7 @@ deletebtns.forEach((btn) => {
         location.reload();
     });
 });
-
+//logout function that ends the session
 const logout = async () => {
     const response = await fetch("/logout", {
         method: "POST",
@@ -86,5 +83,5 @@ const logout = async () => {
         alert(response.statusText);
     }
 };
-
+//listen to the logout button
 logoutbtn.addEventListener("click", logout);

@@ -1,6 +1,7 @@
+// importing sequelize and the default models
 const { Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
-
+// setting up the list table
 class List extends Model {}
 
 List.init(
@@ -16,14 +17,6 @@ List.init(
         list_descrip: {
             type: DataTypes.STRING
         },
-        // references the 'id' of 'user' to find which one is within a list
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //       model: 'user',
-        //       key: 'user_id',
-        //     },
-        //   },
     },
     {
         sequelize,
@@ -33,5 +26,5 @@ List.init(
         modelName: 'list'
     }
 );
-
+// exporting the list table
 module.exports = List;

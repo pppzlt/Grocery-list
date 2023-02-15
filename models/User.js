@@ -1,8 +1,9 @@
+// import in seqelize and the default models
 const { Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
 
 class User extends Model {}
-
+// setting up the user table
 User.init(
     {
         user_id: {
@@ -19,13 +20,6 @@ User.init(
         password: {
             type: DataTypes.STRING
         }
-        // list_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'list',
-        //         key: 'list_id',
-        //     }
-        // }
     },
     {
         sequelize,
@@ -37,5 +31,5 @@ User.init(
         modelName: 'user'
     }
 );
-
+// exporting the user table
 module.exports = User;
