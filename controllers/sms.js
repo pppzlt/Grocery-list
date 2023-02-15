@@ -4,7 +4,7 @@ const { User, List } = require("../models");
 
 router.post("/sms", async (req, res) => {
     console.log("msg received");
-    console.log(req.body);
+    // console.log(req.body);
     const twiml = await new MessagingResponse();
 
     // Access the message body and the number it was sent from.
@@ -14,21 +14,22 @@ router.post("/sms", async (req, res) => {
     let newItem = {
         item: text_array[0],
         quantity: text_array[1],
-        frequency: 1, //default to be weekly
-        category: "grocery", //default
+        frequency: 1,
+        category: "grocery",
         comment: text_array[2],
-        //needs changed
-        //list_id: itemSel.value,
-        list_id: 1, //default
+        list_id: 1,
     };
     console.log(newItem);
-    let response = await fetch("/innerlist", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newItem),
-    });
+    let response = await fetch(
+        "https://mvp-grocery-list.herokuapp.com/innerlist",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newItem),
+        }
+    );
 
     await twiml.message("Text received! The MVP team reminds you of smiling!");
 
