@@ -16,4 +16,4 @@ JavaScript,  Handlebars, CSS, Node.js, Express.js, Sequelize, mySQL, Twilio, bcr
 
 
 ## Deployed App
-Deployed app URL: https://mvp-grocery-list.herokuapp.com/
+Deployed app URL: https://mvp-grocery-list.herokuapp.com/home/
